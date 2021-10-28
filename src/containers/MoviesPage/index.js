@@ -46,7 +46,7 @@ class Movies extends Component {
     }
 
     componentWillMount() {
-        axiosInstance.get('', { params: { s: 'Batman' } })
+        axiosInstance.get('', { params: { s: 'Batman', page: 3 } })
             .then(res => {
                 this.setState({ movies: res.data.Search })
             })
