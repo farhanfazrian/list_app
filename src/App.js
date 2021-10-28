@@ -7,8 +7,8 @@ import MovieDetailPage from './containers/MovieDetailPage';
 function App() {
   return (
     <Switch>
-      <Route path="/movies" component={Movies} />
       <Route path="/movie/:movieId" component={MovieDetailPage} />
+      <Route path="/" component={Movies} />
     </Switch>
   );
 }
