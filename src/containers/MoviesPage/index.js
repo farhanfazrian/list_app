@@ -17,6 +17,12 @@ justify-content:center;
 flex-wrap:wrap;
 `
 
+const WrapperSearch = styled.div`
+display:flex;
+width:100%;
+justify-content:center;
+`;
+
 const TextField = styled.input`
 width: 50%;
 padding: 12px 20px;
@@ -31,17 +37,16 @@ box-sizing: border-box;
 }
 `
 
-const IconSearch = styled.button`
-position: absolute;
-right: 330px;
-height: 40px;
+const ButtonSearch = styled.button`
+padding: 12px;
 border: 0px;
 border-radius: 4px;
 background: #00bf71;
-color:white;
-cursor:pointer;
+color: white;
+cursor: pointer;
+height: 40px;
+margin-left: 12px;
 `
-
 
 class Movies extends Component {
 
@@ -76,8 +81,10 @@ class Movies extends Component {
         const { movies, keyword } = this.state;
         return (
             <Wrapper>
-                <IconSearch onClick={this.handleSearchClick}>search</IconSearch>
-                <TextField type="text" value={keyword} placeholder="Movie Name" onChange={e => this.handleKeywordChange(e)} />
+                <WrapperSearch>
+                    <TextField type="text" value={keyword} placeholder="Movie Name" onChange={e => this.handleKeywordChange(e)} />
+                    <ButtonSearch onClick={this.handleSearchClick}>SEARCH</ButtonSearch>
+                </WrapperSearch>
                 <WrapperContent>
                     {!!movies && movies.map((movie, index) => {
                         return <Card key={index.toString()} data={movie} onClick={() => this.props.history.replace(`/movie/${movie.imdbID}`)} />
