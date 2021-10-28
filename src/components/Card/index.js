@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-const Wrapper = styled.button`
+export const Wrapper = styled.button`
 position: relative;
 top: 0;
 width:200px;
