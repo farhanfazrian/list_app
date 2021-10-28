@@ -18,11 +18,12 @@ $ yarn install
 ```sh
 $ yarn start
 ```
-
+```sh
 REACT_APP_OMDB_API_KEY=YOUR_API_KEY
 
 ex :
 REACT_APP_OMDB_API_KEY=1234568
+```
 
 ```sh
 $ yarn start
