@@ -31,6 +31,7 @@ padding: 10px 36.8px !important;
 border:none;
 width:25%;
 margin-top:32px;
+cursor:pointer;
 
 @media (max-width: 768px) {
     width:100%;

@@ -32,10 +32,14 @@ box-sizing: border-box;
 `
 
 const IconSearch = styled.button`
-border: 0px;
 position: absolute;
 right: 330px;
 height: 40px;
+border: 0px;
+border-radius: 4px;
+background: #00bf71;
+color:white;
+cursor:pointer;
 `
 
 
