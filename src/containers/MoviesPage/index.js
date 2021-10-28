@@ -25,6 +25,10 @@ display: inline-block;
 border: 1px solid #ccc;
 border-radius: 4px;
 box-sizing: border-box;
+
+@media (max-width: 768px) {
+    width:100%;
+}
 `
 
 const IconSearch = styled.button`
@@ -63,16 +67,16 @@ class Movies extends Component {
                 this.setState({ movies: res.data.Search })
             })
     }
+
     render() {
         const { movies, keyword } = this.state;
         return (
             <Wrapper>
-
                 <IconSearch onClick={this.handleSearchClick}>search</IconSearch>
                 <TextField type="text" value={keyword} placeholder="Movie Name" onChange={e => this.handleKeywordChange(e)} />
                 <WrapperContent>
                     {!!movies && movies.map((movie, index) => {
-                        return <Card key={index.toString()} data={movie} />
+                        return <Card key={index.toString()} data={movie} onClick={() => this.props.history.replace(`/movie/${movie.imdbID}`)} />
                     })}
                     {!movies && <div>Movies Not Found!</div>}
                 </WrapperContent>
